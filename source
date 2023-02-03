@@ -17,6 +17,7 @@ int main() {
    string s = "s";
    
 //User Input
+   cout << "Enter in a password: ";
    cin >> pass;
 
 //Finding Indicies
