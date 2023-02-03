@@ -1,0 +1,50 @@
+/*
+* Author: Tyler Scotti
+* Description: This program takes a "simple" password, and replaces a few letters to make it a tad bit more complex.
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+   
+//Variable Initialization
+   string pass;
+   string i = "i";
+   string a = "a";
+   string m = "m";
+   string b = "B";
+   string s = "s";
+   
+//User Input
+   cin >> pass;
+
+//Finding Indicies
+   size_t foundI = pass.find(i);   //Finds index of "i"
+   size_t foundA = pass.find(a);   //Finds index of "a"
+   size_t foundM = pass.find(m);   //Finds index of "m"
+   size_t foundB = pass.find(b);   //Finds index of "B"
+   size_t foundS = pass.find(s);   //Finds index of "s"
+   
+//If found string exists... replace it
+   if(foundI != string::npos){
+      pass.replace(foundI,1,"1");
+   } 
+   if(foundA != string::npos){
+      pass.replace(foundA,1,"@");
+   }
+   if(foundM != string::npos){
+      pass.replace(foundM,1,"M");
+   }
+   if(foundB != string::npos){
+      pass.replace(foundB,1,"8");
+   }
+   if(foundS != string::npos){
+      pass.replace(foundS,1,"$");
+   }
+   
+//Output configured password
+   cout << pass.append("!") << endl;
+   
+   return 0;
+}
